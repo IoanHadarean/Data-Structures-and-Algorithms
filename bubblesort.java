@@ -50,18 +50,32 @@ public class bubblesort{
     }
 
     // Recursive bubblesort from left to right
-    public static void bubbleSort(int array[], int n) {
-        if (n == 1)
-            return;
+    // public static void bubbleSort(int array[], int n) {
+    //     if (n == 1)
+    //         return;
 
-        for (int i = 0; i < n - 1; i++) {
-            if (array[i] > array[i+1]) {
-                  swap(array, i, i+1) ;
+    //     for (int i = 0; i < n - 1; i++) {
+    //         if (array[i] > array[i+1]) {
+    //               swap(array, i, i+1) ;
+    //         }
+    //     }
+
+    //     bubbleSort(array, n - 1);
+    // }
+     // Recursive bubblesort from right to left
+     public static void bubbleSort(int[] array, int n) {
+        if (n == array.length - 2) {
+            return;
+        }
+
+
+        for (int i = array.length - 1 ; i > n; i--) {
+            if (array[i] > array[i-1]) {
+                swap(array, i, i-1);
             }
         }
 
-        bubbleSort(array, n - 1);
+        bubbleSort(array, n + 1);
     }
-
 }
 
